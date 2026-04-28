@@ -1,0 +1,50 @@
+************************* TÜRKÇE ******************************
+
+Can Suyu(Life Water) --- FİYAT: 50
+Eğer oyuncu bunu satın aldığı gece öldürülürse hayatını kaybetmez. 
+Doktorun veya fedainin korumasına ihtiyaç duymadan hayatta kalır.
+Sadece satın alındığı gece kullanılabilir.
+
+Çelik Yelek (Kevlar) --- FİYAT: 30
+Mafya saldırısından korur ancak seri katil saldırısından korumaz.
+Oyunda seri katil yoksa bu item de markette yoktur.
+Sadece satın alındığı gece kullanılabilir.
+
+Sahte Kimlik (Fake ID) --- FİYAT: 40
+Bir geceliğine oyuncuyu onuru yüksek bir vatandaş gibi gösterir. 
+Muhbir, polis ve gazeteci'den korur.
+Sadece satın alındığı gece kullanılabilir.
+
+Onur Ruleti (Roulette of Honour) --- FİYAT: 15
+Satın alındığı gece yapılan eylemin onur etkisini ikiye katlar.
+Örnek: Doktor bir hayat kurtarırsa ve +1 onur kazanırsa, muska sayesinde +2 kazanır. Eğer -1 onur kaybedecekse, -2 kaybeder.
+Sadece satın alındığı gece kullanılabilir. 
+
+Onur Muskası (Amulet of Honour) --- FİYAT: 25
+Satın alan oyuncu eğer satın aldığı gece onur düşüren bir eylem yaparsa onuru hiç eksilmez.
+
+
+************************* ENGLISH ******************************
+
+Life Water --- PRICE: 50
+If the player is killed on the night they purchase this, they do not die.
+They survive without needing protection from the doctor or bodyguard.
+Can only be used on the night it is purchased.
+
+Kevlar --- PRICE: 30
+Protects against mafia attacks but does not protect against serial killer attacks.
+If there is no serial killer in the game, this item is not available in the market.
+Can only be used on the night it is purchased.
+
+Fake ID --- PRICE: 40
+Makes the player appear as a high-honor citizen for one night.
+Provides protection from the informant, cop, and journalist.
+Can only be used on the night it is purchased.
+
+Roulette of Honour --- PRICE: 15
+Doubles the honor effect of the action performed on the night it is purchased.
+Example: If a doctor saves a life and gains +1 honor, it becomes +2. If they would lose -1 honor, it becomes -2.
+Can only be used on the night it is purchased.
+
+Amulet of Honour --- PRICE: 25
+If the player performs an action that would decrease their honor on the night they purchase this, their honor does not decrease at all.

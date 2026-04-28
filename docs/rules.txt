@@ -1,0 +1,68 @@
+************************* TÜRKÇE ******************************
+
+*Eğer fedai ve doktor aynı kişiyi seçer ve kurtarırlarsa, fedai ölür. Doktor kurtarmamış sayılır. 
+Ancak bu kişinin rolüne bağlı olacak onur değişiklikleri aynı şekilde gerçekleşir. Doktor yine onur 
+kazanıp kaybedebilir ancak doğru kişiyi tahmin etse bile para kazanamaz.
+
+*Eğer onur puanı 0'dan düşükse sabahları gelen gelir ve iş yapınca gelen gelir daha düşük olur.
+
+*Eğer onur puanı -5'ten düşükse gece rastgele şeyler olup para kaybetme riski artar. (Mafya ve seri katil hariç)
+(Örn: "Gece cüzdanını düşürdün, -5 bakiye" gibi bildirimler gelebilir.)
+
+*Oyuncular, eğer onur puanları -3'ten düşükse yaptığı hareketler sonucunda kazandığı paralardan %20 daha düşük paralar kazanır.
+(Mafya ve Seri katil hariç)
+
+*Mafya ve seri katil rolleri onur düşüklüğü cezalarından etkilenmez çünkü görevlerini yaptıklarında onurları düşüyor. Bu iki karakter 
+onur düşüklüğü nedeniyle cezalandırılmaz.
+
+*Oyuncular onur seviyelerini tam olarak öğrenemez. Ancak 2 günde bir onur seviyesine göre bazı mesajlar alırlar. 
+ÖRN:
+"Halk arasında saygı duyulan birisin.", "İnsanlar sana güvenmiyor.", "Şu ana kadar yaptığın hareketler itibarını zedeledi." vb.
+
+*Eğer bir oyuncunun onur puanı 10'a eşit veya büyükse o oyuncunun verdiği oylar 2 puan sayılır. 
+
+*Eğer bir oyuncunun onur puanı -10'a eşit veya küçükse o oyuncu sabahki oylamada oy veremez.
+
+*Hapse giren kişi her gün eklenen +10'luk ücreti alamaz. Ancak ölen oyuncuların aksine oyundan tamamen çıkmazlar çünkü avukat onları 
+çıkarabilir.
+
+*Eğer bir kişinin bakiyesi, hakim hariç oyuncu sayısının 30 katına eşit olursa, o kişi rolüne bakılmaksızın oyunu tek başına kazanır.
+
+*Fedai'nin doktor'dan öncelikli olması gibi, Can Suyu ve Çelik Yelek item'ları da Fedai'den önceliklidir. Eğer oyuncu bu item'lardan 
+birisini kullanmışsa fedai ve doktor bakiye kazanamaz. Doğru veya yanlış tahmini yaptıkları için onurları artıp azalabilir ancak bakiyeleri 
+değişmez. 
+
+
+************************* ENGLISH ******************************
+
+*If the bodyguard and the doctor choose and save the same person, the bodyguard dies. The doctor is considered not to have saved the person.
+However, honor changes based on that person’s role still apply. The doctor may still gain or lose honor, but even if they guessed correctly, 
+they do not earn any money.
+
+*If the honor score is below 0, the income gained in the morning and from performing actions is reduced.
+
+*If the honor score is below -5, random negative events may occur at night, increasing the risk of losing money. 
+(Except mafia and serial killer)
+(Example: Notifications like "You dropped your wallet at night, -5 balance" may appear.)
+
+*If a player's honor score is below -3, they earn 20% less money from the actions they perform. (Except mafia and serial killer)
+Mafia and serial killer roles are not affected by low honor penalties because their honor naturally decreases when they perform their roles. 
+These two characters are not punished for low honor.
+
+*Players cannot know their exact honor level. However, every 2 days they receive messages reflecting their honor status.
+EXAMPLES:
+"You are respected among the people.", "People do not trust you.", "Your actions so far have damaged your reputation." etc.
+
+*If a player's honor score is equal to or greater than 10, their votes count as 2 points.
+
+*If a player's honor score is equal to or less than -10, they cannot vote in the morning.
+
+*A player who is in prison does not receive the daily +10 income. 
+However, unlike dead players, they are not completely out of the game because the lawyer can release them.
+
+*If a player's balance becomes equal to 30 times the number of players (excluding the judge), 
+that player wins the game alone regardless of their role.
+
+*Just as the bodyguard has priority over the doctor, Life Water and Kevlar items also have priority over the bodyguard. 
+If a player uses one of these items, the bodyguard and doctor cannot gain balance. 
+They may still gain or lose honor depending on correct or incorrect predictions, but their balance does not change.

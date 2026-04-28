@@ -1,0 +1,94 @@
+************************* TÜRKÇE ******************************
+
+MAFYA (MAFIA): 
+Başlangıç Onuru: 2
+Başlangıç Bakiyesi: 20
+
+HAKİM (JUDGE):
+Hakim'in bakiyesi yoktur. 
+Ona rüşvet verilemez. 
+Onur seviyesi, tutuklamaya karar verdiği kişinin mafya ya da masum olmasına göre değişir.
+
+VATANDAŞ (CITIZEN):
+Başlangıç Onuru: 2
+Başlangıç Bakiyesi: 20
+
+POLİS (COP): 
+Başlangıç Onuru: 2
+Başlangıç Bakiyesi: 20
+
+DOKTOR (DOCTOR):
+Başlangıç Onuru: 2
+Başlangıç Bakiyesi: 20
+
+MUHBİR (INFORMANT):
+Başlangıç Onuru: 2
+Başlangıç Bakiyesi: 20
+
+AVUKAT (LAWYER):
+Başlangıç Onuru: 2
+Başlangıç Bakiyesi: 20
+
+SERİ KATİL (SERIAL KILLER):
+Başlangıç Onuru: 2
+Başlangıç Bakiyesi: 20
+
+KUMARBAZ (GAMBLER):
+Başlangıç Onuru: 2
+Başlangıç Bakiyesi: 20
+
+FEDAİ (BODYGUARD):
+Başlangıç Onuru: 2
+Başlangıç Bakiyesi: 20
+
+GAZETECİ (JOURNALIST):
+Başlangıç Onuru: 2
+Başlangıç Bakiyesi: 20
+
+
+************************* ENGLISH ******************************
+
+MAFIA:
+Starting Honor: 2
+Starting Balance: 20
+
+JUDGE:
+The judge has no balance.
+They cannot be bribed.
+Their honor level changes depending on whether the person they choose to imprison is mafia or innocent.
+
+CITIZEN:
+Starting Honor: 2
+Starting Balance: 20
+
+COP:
+Starting Honor: 2
+Starting Balance: 20
+
+DOCTOR:
+Starting Honor: 2
+Starting Balance: 20
+
+INFORMANT:
+Starting Honor: 2
+Starting Balance: 20
+
+LAWYER:
+Starting Honor: 2
+Starting Balance: 20
+
+SERIAL KILLER:
+Starting Honor: 2
+Starting Balance: 20
+
+GAMBLER:
+Starting Honor: 2
+Starting Balance: 20
+
+BODYGUARD:
+Starting Honor: 2
+Starting Balance: 20
+
+JOURNALIST:
+Starting Honor: 2
+Starting Balance: 20

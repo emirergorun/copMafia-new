@@ -1,0 +1,37 @@
+************************* TÜRKÇE ******************************
+
+GECE:
+
+Herkes uyur. Telefon sırayla dolanır. Her oyuncu kendi karakterine uygun aksiyonları yapar.
+
+SABAH: 
+
+Herkes uyanır. Ölen kişiler belirlenir. Doktor birisini kurtardıysa o açıklanır. 
+
+Oyuncular kendi aralarında 2 dakika tartışırlar.
+
+Ardından oylama yapılır. Oylama için bir kez daha telefon dolaşır. 
+Bu aşamada oyuncular hem oy verirler hem de gece kendilerine rüşvet verildiyse kabul edip etmeyeceklerine karar verirler.
+
+Eğer varsa, gece polislerin tutukladığı kişilerden oyunun rastgele seçtiği bir kişi ve oylamada çıkan kişi (eğer birden fazla kişi eşit oy almışsa oylama geçersiz sayılır)
+hakimin karşısına çıkar. Hakim bu oyunculardan birisini veya hiçbirini hapse atmayı seçebilir. 
+Vereceği karar sadece ve sadece hakime aittir, doğrudan onun onur seviyesini etkiler.
+
+Uyumadan önce hayatta kalan herkesin bakiyesi 10 artar.
+
+************************* ENGLISH ******************************
+
+NIGHT:
+Everyone sleeps. The phone is passed around in turns. Each player performs actions according to their character.
+
+MORNING:
+Everyone wakes up. The players who died are determined. If the doctor saved someone, it is announced.
+Players discuss among themselves for 2 minutes.
+
+Then voting takes place. The phone is passed around once again for voting.
+At this stage, players both cast their votes and decide whether to accept any bribes they may have received during the night.
+
+If applicable, one person randomly selected from those detained by the police during the night and the person chosen by the vote (if multiple players receive the same number of votes, the vote is considered invalid) are brought before the judge. The judge may choose to imprison one of them or neither.
+The decision belongs solely to the judge and directly affects their honor level.
+
+Before going to sleep, the balance of all surviving players increases by 10.

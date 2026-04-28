@@ -1,0 +1,167 @@
+************************* TÜRKÇE ******************************
+
+MAFYA (MAFIA): 
+1- ÖLDÜRMEK: (+10 bakiye, -1 onur) 
+Mafya sayısından bağımsız olarak, her mafya farklı kişiyi öldürse bile öldürülenler arasından rastgele biri
+oyun tarafından seçilir ve o kişi ölür. Eğer birden fazla mafya varsa, mafyaların seçtikleri arasından oyunun 
+seçtiği kişiyi seçen mafya'nın bakiyesi 10 artar ancak onuru 1 azalır. Diğer mafyalarda herhangi bir değişişklik 
+olmaz.
+2- RÜŞVET: (-25 bakiye, -1 onur)
+Her mafya kendi başına birisine rüşvet verebilir. Verdiği rüşvete bir mesaj yazabilir. Rüşvet fiyatı sabit ve 25'tir. 
+Eğer rüşvet kabul edilmezse mafyanın bakiye ve onur seviyesi değişmez, ancak kabul edilirse bakiye 25 ve onur 
+seviyesi 1 azalır.
+
+HAKİM (JUDGE):
+1- MAHKEME KARARI(-1, -2 ya da +1 onur): Her sabah karşısına iki isim gelir. Birisi (eğer varsa) polislerin gece tutukladığı kişidir. Diğeri ise sabah 
+halk oylamasında belirlenen kişidir. Hakim bunlardan sadece bir tanesini hapse atabilir. Eğer hapse attığı kişi mafyaysa 
+onuru 1 puan artar. Eğer hapse attığı kişi masum değilse onuru 1 puan, hapse attığı kişi masum ve serbest bırakatığı kişi mafya veya 
+seri katil ise onuru 2 puan azalır. Hakim hiç kimseyi hapse atmamayı da seçebilir. Eğer ikisi de masumsa ve kimseyi hapse atmazsa 
+onuru 1 puan artar.
+
+VATANDAŞ (CITIZEN):
+Vatandaşın diğer karakterlerden farklı olarak yapabileceği bir şey yoktur.
+
+POLİS (COP): 
+1- GÖZALTINA ALMA (-1 ya da +1 onur): Her polis bir kişiyi göz altına alabilir. Gözaltına alınan kişi sayısı birden fazlaysa içlerinden oyunun rastgele 
+seçtiği bir kişi ertesi gün hakimin karşısına çıkar. Polislerin gözaltına aldığı kişi mafya veya seri katilse onurları 1 artar. Eğer 
+masum bir kişiyi gözaltına almışlarsa onurları 1 azalır. Bunlar her polis için ayrı ayrı değerlendirilir.
+2- SORGULAMA (-40 bakiye): Her polis kendi başına bir kişiyi sorgulayabilir. Sorgulama sonucunda direkt olarak rolü göremez, sadece iyi ya da kötü 
+bir karakter olduğunu görebilir. Kötü karakterler mafya ve seri katildir. Diğer hepsi iyi karakterlerdir. Eğer bir polis 40 para verirse 
+bir kişinin iyi mi kötü mü olduğunu öğrenebilir. 
+*Sorgulama ve gözaltına alma işlemleri aynı turda yapılamaz. Sadece birisi seçilip o yapılmalıdır.
+
+DOKTOR (DOCTOR):
+1- HASTA KURTARMA (Muhtemel +1, -1 onur): Her gece doktora bir kişinin hayatını kurtarma şansı verilir. Eğer seçtiği kişi o gece mafya ya da seri katil 
+tarafından öldürülmüşse, doktor o kişiyi kurtarır ve ölmesini engeller.  Doktor kendisini tüm oyun boyunca 1 kere koruyabilir. Diğer karakterleri ise 
+birer tur arayla sınırsız kez koruyabilir. Yani bir kişiyi iki tur üst üste koruyamaz. Eğer koruduğu kişi kötü bir karakterse onuru 1 puan azalır, iyi bir 
+karakterse onuru 1 puan artar. Eğer koruduğu kişinin hayatını kurtarmışsa onuru 1 puan daha ve bakiyesi 10  artar. Eğer 3 tur üst üste bir kişinin hayatını 
+kurtaramazsa onuru 1 puan azalır.
+
+MUHBİR (INFORMANT):
+1- BİLGİ ÖĞRENMEK (-30 bakiye): Sadece bir kereye mahsus kullanabildiği bu özellik sayesinde içlerinden birisinin kesinlikle mafya olduğu 3 isim öğrenir. 
+Eğer oyun çok kalabalıksa ve örnek olarak 5 tane mafya varsa karşısına gelen 3 kişi birden de mafya olabilir. Birisi doktor, birisi mafya diğer ise seri katil 
+olabilir. Buradaki tek kesinlik, gelen 3 isimden birisinin mafya olduğudur. Diğerleri mafya olabilir de olmayabilir de. Muhbir eğer bu özelliği kullanmak istiyorsa 
+30 ücret ödemelidir.
+
+AVUKAT (LAWYER):
+1- HAPİSTEN ÇIKARMAK (+25 bakiye, +1, -∞ onur): Eğer avukatın hapisten çıkardığı kişi mafya ya da seri katilse avukatın onuru -15'e düşer. 
+Eğer masum bir kişiyi hapisten çıkarmışsa onuru 1 puan artar.
+
+SERİ KATİL (SERIAL KILLER):
+1- ÖLDÜRMEK (-1 onur, +10 bakiye): Eğer seri katil gece birisini öldürürse bakiyesi 10 artar, onuru 1 azalır.
+
+KUMARBAZ (GAMBLER):
+1- KUMAR (+x bakiye, -10 bakiye): Kumarbaz, gece ölecek kişiyi tahmin etmeye çalışır. Bunu 10 ücret ödeyerek yapar. Eğer tahmini doğru çıkarsa 40 para kazanır. 
+NOT: Kumarbaz, MAFYALARIN öldürdüğü kişiyi bilmelidir! Eğer seri katilin öldürdüğü kişiyi tahmin ederse 20 kazanır.
+
+FEDAİ (BODYGUARD):
+1- KORU (+1 onur, +2 onur, -1 onur, -2 onur): Fedai'nin gece koruduğu kişi eğer masumsa ve o kişiye bir şey olmazsa fedai +1 onur kazanır. Eğer fedai'nin koruduğu kişi masumsa 
+ve o gece öldürülmeye çalışılırsa fedai masum bir insanın ölmesini engellediği için +2 onur kazanır. Eğer koruduğu kişi masum değilse onuru 1 eksilir. Eğer koruduğu kişi masum 
+değilse ve o gece öldürülmeye çalışırsa fedai masum olmayan bir insanın haayatını kurtardığı için onuru 2 eksilir. (Bu durum sadece seri katil ve mafyanın gece birbirlerini 
+öldürdüğü durumlarda gerçekleşebilir.)
+
+GAZETECİ (JOURNALIST):
+1- ONUR ÖĞRENMEK (-20 bakiye): Gazeteci her gece 20 ücret ödeyerek (bu eylemin bir sınırı yoktur, bakiye yettiği sürece tekrarlanabilir) bir oyuncunun onurunu görebilir. Ancak 
+sadece onur seviyesinin yüksek ya da düşük olduğunu öğrenebilir. Örnek olarak, mafyanın onuru düşükse ya da doktor yanlış tahminler yaptığı için onuru düşükse ikisi de aynı şekilde, 
+yani düşük onurlu olarak gözükecektir. 
+
+ORTAK KARAKTER EYLEMLERİ:
+1- RÜŞVET KABULÜ (+25 Bakiye, -1 Onur, +1 onur) / (MAFYA VE HAKİM HARİÇ):
+Rüşvet teklif edilen kişi, içlerinden birisinin kesinlikle rüşveti teklif eden kişi olduğu 3 kişinin 
+ismini öğrenir. Ancak kimin kesin olarak rüşvet verdiğini öğrenemez. Rüşvette bir mesaj yazar. Rüşveti veren 
+mafya o mesajda isteneni yapması için o parayı teklif etmiştir. Rüşveti kabul edip mesajda yazanı yapabilirsiniz 
+ancak yapmayabilirsiniz de. Eğer rüşvet reddedilirse, reddeden kişinin onur puanı 1 artar.
+
+2- SABAH OYLAMASI (HAKİM HARİÇ):
+Her sabah, oyuncular bir kişiye oy verirler. Oy verdikleri oyuncu eğer mafya veya seri katil ise onur puanları 1 
+artar, eğer masum bir oyuncuya oy verirlerse onur puanları 1 puan azalır.
+
+3- UYANMAK (HAKİM HARİÇ):
+Her karakterin bakiyesi geçen bir günden sonra 10 artar.
+
+4- HAPİSTEN ÇIKMAK (HAKİM ve AVUKAT HARİÇ):
+Avukat eğer birisini hapisten çıkarırsa, hapisten çıkan kişinin bakiyesi 25 eksilir. Avukat'ın bakiyesi 25 artar. 
+Ancak hapisten çıkan kişinin bakiyesi yetersizse hapisten çıkamaz.
+
+************************* ENGLISH ******************************
+
+MAFIA:
+1- KILL: (+10 balance, -1 honor)
+Regardless of the number of mafia members, even if each mafia targets a different person, one of the targeted victims is 
+randomly selected by the game and that person dies. If there is more than one mafia, the mafia member who selected the victim 
+chosen by the game gains +10 balance but loses 1 honor. Other mafia members are not affected.
+2- BRIBE: (-25 balance, -1 honor)
+Each mafia can independently bribe someone. They can attach a message to the bribe. The bribe cost is fixed at 25. If the bribe is 
+rejected, the mafia’s balance and honor remain unchanged. If accepted, their balance decreases by 25 and their honor decreases by 1.
+
+JUDGE:
+1- COURT DECISION (-1, -2 or +1 honor):
+Each morning, two names are presented. One is (if applicable) the person detained by the police during the night. The other is the person 
+selected by the public vote in the morning. The judge can imprison only one of them. If the imprisoned person is mafia, the judge gains 
++1 honor. If the imprisoned person is not innocent, the judge loses 1 honor. If the imprisoned person is innocent and the released person is 
+mafia or a serial killer, the judge loses 2 honor. The judge may also choose not to imprison anyone. If both are innocent and no one is 
+imprisoned, the judge gains +1 honor.
+
+CITIZEN:
+The citizen has no special abilities different from other characters.
+
+COP:
+1- DETAIN (-1 or +1 honor):
+Each cop can detain one person. If multiple people are detained, one of them is randomly selected by the game and brought before the judge 
+the next day. If the detained person is mafia or a serial killer, the cop gains +1 honor. If the detained person is innocent, the cop loses 
+1 honor. This is evaluated individually for each cop.
+2- INTERROGATE (-40 balance):
+Each cop can independently interrogate one person. The interrogation does not reveal the exact role, only whether the character is good or bad. 
+Mafia and serial killer are considered bad; all others are good. By paying 40, a cop can learn if someone is good or bad. Detaining and interrogating 
+cannot be done in the same turn. Only one action can be chosen.
+
+DOCTOR:
+1- SAVE PATIENT (Possible +1, -1 honor):
+Each night, the doctor can attempt to save one person. If the selected person is targeted for death by the mafia or serial killer that night, the doctor 
+saves them. The doctor can protect themselves only once during the entire game. Other players can be protected unlimited times, but not in consecutive turns 
+(cannot protect the same person two nights in a row). If the protected person is bad, the doctor loses 1 honor; if good, gains 1 honor. If the doctor 
+successfully saves someone’s life, they gain an additional +1 honor and +10 balance. If the doctor fails to save anyone for 3 consecutive turns, they lose 1 honor.
+
+INFORMANT:
+1- GATHER INFORMATION (-30 balance):
+This ability can be used only once. The informant learns 3 names, at least one of whom is definitely mafia. In large games (e.g., 5 mafia), all three names could be 
+mafia, or a mix such as doctor, mafia, and serial killer. The only certainty is that at least one of the three is mafia. Others may or may not be mafia. The informant 
+must pay 30 to use this ability.
+
+LAWYER:
+1- RELEASE FROM PRISON (+25 balance, +1, -∞ honor):
+If the lawyer releases a mafia or serial killer, their honor is reduced to -15. If they release an innocent person, they gain +1 honor.
+
+SERIAL KILLER:
+1- KILL (-1 honor, +10 balance):
+If the serial killer kills someone at night, they gain +10 balance and lose 1 honor.
+
+GAMBLER:
+1- GAMBLE (+x balance, -10 balance):
+The gambler tries to predict who will die that night by paying 10. If the prediction is correct, they earn 40.
+NOTE: The gambler must predict the person killed by the MAFIA. If they predict the person killed by the serial killer, they earn 20.
+
+BODYGUARD:
+1- PROTECT (+1 honor, +2 honor, -1 honor, -2 honor):
+If the bodyguard protects an innocent person and nothing happens to them, the bodyguard gains +1 honor. If the protected person is innocent and is targeted for death that night, 
+the bodyguard gains +2 honor for preventing the death. If the protected person is not innocent, the bodyguard loses 1 honor. If the protected person is not innocent and is 
+targeted for death, the bodyguard loses 2 honor for saving a non-innocent person. (This situation can only occur when the mafia and serial killer target each other at night.)
+
+JOURNALIST:
+1- LEARN HONOR (-20 balance):
+Each night, the journalist can pay 20 (this action has no limit and can be repeated as long as there is enough balance) to see a player’s honor level. 
+However, they only learn whether the honor is high or low. For example, a mafia with low honor or a doctor with low honor due to mistakes will both appear as “low honor.”
+
+COMMON CHARACTER ACTIONS:
+1- ACCEPT BRIBE (+25 balance, -1 honor, +1 honor) / (EXCEPT MAFIA AND JUDGE):
+The person offered a bribe learns 3 names, one of whom is definitely the one who offered the bribe. However, they cannot know for sure which one it is. The bribe includes a message. 
+The mafia offers the money to get the target to follow that message. The player may choose to follow the message or not. If the bribe is rejected, the player gains +1 honor.
+
+2- MORNING VOTE (EXCEPT JUDGE):
+Each morning, players vote for one person. If the voted player is mafia or a serial killer, voters gain +1 honor. If they vote for an innocent player, they lose 1 honor.
+
+3- WAKE UP (EXCEPT JUDGE):
+Each character’s balance increases by 10 after each day passes.
+
+4- RELEASE FROM PRISON (EXCEPT JUDGE AND LAWYER):
+If the lawyer releases someone from prison, the released person loses 25 balance and the lawyer gains 25 balance. If the released person does not have enough balance, they cannot be released.

@@ -1,0 +1,123 @@
+************************* TÜRKÇE ******************************
+
+--------------- ZORUNLU KARAKTERLER ---------------
+
+MAFYA (MAFIA): 
+Kötü bir karakterdir. Gece insanlara rüşvet verebilir, insanları öldürebilir.  Mafya sayısından bağımsız, 
+gece mafyalar sadece 1 kişiyi öldürebilir. Örnek olarak, 5 tane de mafya olsa ve hepsi farklı kişileri seçseler bile, 
+bu seçtikleri kişiler arasından rastgele bir kişi seçilir ve o kişi ölür. Aynı zamanda aynı gece birisine rüşvet vermeyi 
+de seçebilirler.
+
+HAKİM (JUDGE):
+Oyunun moderatörü gibidir. Kimin hakim olduğunu herkes bilir. Hakim mafyalar tarafından öldürülemez, rüşvet teklifi alamaz 
+doktor tarafından kurtarılamaz. Hakim gece oyuna katılmaz. Sabah oy vermez. İşi mahkemeye çıkan kişilerin suçlu ya da 
+suçsuz olmalarına karar verip onları hapse atmak veya serbest bırakmaktır. Oylamada halktan fikir alabilir ancak son kararı 
+tek başına kendisi ve tüm sorumluluk kendine aittir.
+
+VATANDAŞ (CITIZEN):
+Oyunda bir yeteneği bulunmayan, mafyaların kim olduğunu anlayıp oylamayla hapse attırmaya çalışan karakterlerdir.
+
+--------------- ZORUNLU OLMAYAN KARAKTERLER ---------------
+
+POLİS (COP): 
+İyi bir karakterdir. Gece birisini tutuklar. Tutuklamaları mafyada olduğu gibi, polis sayısından bağımsızdır. Kaç tane polis 
+olursa olsun, tutuklanan tüm kişiler arasından rastgele bir kişi seçilir ve hakimin karşısına çıkar. Polisin gece iki seçeneği 
+vardır. Sorgulama ya da tutuklama yapmayı tercih edebilir. Sorgulama yapmak için belirli bir ücret ödemesi gerekir. Sorgulama 
+yaptığında o kişinin mafya olup olmadığını öğrenebilir.
+GEREKEN MIN OYUNCU SAYISI: 4
+
+DOKTOR (DOCTOR):
+İyi bir karakterdir. Her gece bir kişinin hayatını kurtarabilir. Eğer kurtardığı kişi mafyanın öldürmeye çalıştığı kişiyse 
+o kişi o gece hayatta kalır. Mafyalara benzer şekilde, doktor sayısından bağımsız olarak kaç kişi seçilirse seçilsin bunların 
+arasından sadece rastgele bir kişi seçilir ve o kurtarılır.
+GEREKEN MIN OYUNCU SAYISI: 4
+
+MUHBİR (INFORMANT):
+İyi bir karakterdir. Özel bir yeteneği vardır. Bu yetenek onun belirli bir ücret ödeyerek içlerinden birisinin kesinlikle 
+mafya olduğu üç isim öğrenmesine olanak sağlar.
+GEREKEN MIN OYUNCU SAYISI: 5
+
+AVUKAT (LAWYER):
+İyi bir karakterdir. 1 kereliğe mahsus, hapse girmiş birisini hapisten çıkarma yeteneği vardır. Bunun için yüklü bir miktar 
+ücret talep eder. Ancak eğer hapisten çıkardığı kişi mafyaysa onuru kalıcı olarak sıfırlanır.
+GEREKEN MIN OYUNCU SAYISI: 5
+
+SERİ KATİL (SERIAL KILLER):
+İki taraftan da bağımsız bir karakterdir, oyunu tek başına kazanmaktır. Amacı maksimum sayıda insanın ölmesidir. Gece mafyalar 
+tarafından öldürülemez ancak polis tarafından tutuklanabilir, sabah oylamasında oylanabilir ve hakim tarafından hapse atılabilir. 
+Tek başına hayatta kalırsa kazanır.
+GEREKEN MIN OYUNCU SAYISI: 5
+
+KUMARBAZ (GAMBLER):
+İki taraftan da bağımsız bir karakterdir. Amacı tek başına maksimum bakiyeye ulaşmaktır. Gece bazı oyuncuların ölüp ölmemesine 
+bahis oynayabilir. Ölecek kişiyi tahmin etmeye çalışır.
+GEREKEN MIN OYUNCU SAYISI: 6
+
+FEDAİ (BODYGUARD):
+İyi bir karakterdir. Gece birisini korumak için kendisini feda edebilir. Eğer koruduğu kişiye bir saldırı olursa kendisi ölür.
+GEREKEN MIN OYUNCU SAYISI: 6
+
+GAZETECİ (JOURNALIST):
+İyi bir karaktertdir. Gece bir oyuncu seçer ve o oyuncunun onurunun yüksek ya da düşük olduğunu görebilir. Ancak o kişinin mafya 
+olup olmadığına dair bir şey öğrenemez. Örnek olarak, Kumarbaz'ın da onuru düşük olabilir, rüşvet alan birisinin de, mafyanın da.
+Gazeteci bu üç kişiyi de sadece onurları düşük şekilde görür.
+GEREKEN MIN OYUNCU SAYISI: 6
+
+************************* ENGLISH ******************************
+
+--------------- MANDATORY CHARACTERS ---------------
+
+MAFIA:
+A bad character. Can bribe people and kill at night. Regardless of the number of mafia members, only 1 person can be killed each night. 
+For example, even if there are 5 mafia members and each chooses a different target, one of those selected targets is chosen randomly and 
+that person dies. They can also choose to bribe someone on the same night.
+
+JUDGE:
+Acts like the moderator of the game. Everyone knows who the judge is. The judge cannot be killed by the mafia, cannot receive bribe offers, 
+and cannot be saved by the doctor. The judge does not participate in the night phase and does not vote in the morning. 
+Their role is to decide whether the accused individuals are guilty or innocent and either imprison or release them. 
+They may take input from the public vote, but the final decision and all responsibility belong solely to the judge.
+
+CITIZEN:
+Characters with no special abilities. Their goal is to identify the mafia and have them imprisoned through voting.
+
+--------------- OPTIONAL CHARACTERS ---------------
+COP:
+A good character. At night, they detain one person. Like the mafia, detentions are independent of the number of cops. No matter how many cops there are, 
+one person is randomly selected from all detained individuals and brought before the judge. The cop has two choices at night: interrogate or detain. 
+Interrogation requires a certain fee. When interrogating, they can learn whether the person is mafia or not.
+MIN PLAYER COUNT REQUIRED: 4
+
+DOCTOR:
+A good character. Can save one person each night. If the saved person is the one targeted by the mafia, they survive that night. Similar to the mafia, 
+regardless of how many doctors there are, only one person among all selected targets is randomly chosen and saved.
+MIN PLAYER COUNT REQUIRED: 4
+
+INFORMANT:
+A good character. Has a special ability that allows them, by paying a certain fee, to learn three names, at least one of whom is definitely mafia.
+MIN PLAYER COUNT REQUIRED: 5
+
+LAWYER:
+A good character. Has a one-time ability to release someone from prison. This requires a significant fee. However, if the released person is mafia, 
+the lawyer’s honor is permanently reduced to zero.
+MIN PLAYER COUNT REQUIRED: 5
+
+SERIAL KILLER:
+An independent character not aligned with either side. Their goal is to win alone by maximizing the number of deaths. 
+They cannot be killed by the mafia at night, but they can be detained by the police, voted on in the morning, and imprisoned by the judge. 
+If they are the last survivor, they win.
+MIN PLAYER COUNT REQUIRED: 5
+
+GAMBLER:
+An independent character. Their goal is to achieve the highest possible balance alone. At night, they can place bets on whether certain players will die. 
+They try to predict who will die.
+MIN PLAYER COUNT REQUIRED: 6
+
+BODYGUARD:
+A good character. Can sacrifice themselves at night to protect someone. If the protected person is attacked, the bodyguard dies instead.
+MIN PLAYER COUNT REQUIRED: 6
+
+JOURNALIST:
+A good character. At night, selects a player and can see whether that player’s honor is high or low. However, they cannot learn whether the person is mafia. 
+For example, a gambler with low honor, someone who accepted a bribe, or a mafia member may all appear as “low honor.” The journalist only sees the honor level.
+MIN PLAYER COUNT REQUIRED: 6
