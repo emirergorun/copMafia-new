@@ -1,6 +1,7 @@
 package com.copMafia.model.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.copMafia.model.entity.Player;
 import com.copMafia.model.repository.PlayerRepository;
@@ -13,19 +14,51 @@ public class ListService {
 		this.repo = repo;
 	}
 
-	public ArrayList<Player> getOpponents(Player player){
-		ArrayList<Player> opponentList = new ArrayList<>();
+	public List<Player> getCurrentNonJudgeOpponents(Player player){
+		List<Player> opponentList = new ArrayList<>();
 
 		for (Player opponent : repo.getMasterList()){
-			if(opponent != player && !opponent.getCharacter().getIsJudge()){
+			if(opponent != player && !opponent.getCharacter().getIsJudge() && player.isAlive()){
 				opponentList.add(opponent);
 			}
 		}
 		return opponentList;
 	}
 
-	public ArrayList<Player> getPrisonList(){
-		ArrayList<Player> prisonList = new ArrayList<>();
+	public List<Player> getCurrentNonJudgePlayers(){
+		List<Player> playerList = new ArrayList<>();
+
+		for (Player player : repo.getMasterList()){
+			if(!player.getCharacter().getIsJudge() && player.isAlive()){
+				playerList.add(player);
+			}
+		}
+		return playerList;
+	}
+
+	public List<Player> getDoctorChoicePlayers(Player doctor){
+		List<Player> doctorList = new ArrayList<>();
+
+		for (Player player : getCurrentNonJudgePlayers()){
+			if(!player.isSavedLastRound()){
+				doctorList.add(player);
+			}
+		}
+		return doctorList;
+	}
+
+	public Player getChosenOpponent(Player player, Integer input){
+		List<Player> opponentList = getCurrentNonJudgeOpponents(player);
+		return opponentList.get(input - 1);
+	}
+
+	public Player getSaveLifeVictim(Player doctor, Integer input){
+		List<Player> doctorList = getDoctorChoicePlayers(doctor);
+		return doctorList.get(input - 1);
+	}
+
+	public List<Player> getPrisonList(){
+		List<Player> prisonList = new ArrayList<>();
 
 		for (Player player : repo.getMasterList()){
 			if(player.getInPrison()){
@@ -35,8 +68,8 @@ public class ListService {
 		return prisonList;
 	}
 
-	public ArrayList<Player> getCourtList(){
-		ArrayList<Player> courtList = new ArrayList<>();
+	public List<Player> getCourtList(){
+		List<Player> courtList = new ArrayList<>();
 
 		for (Player player : repo.getMasterList()){
 			if(player.getInCourt()){
@@ -46,8 +79,8 @@ public class ListService {
 		return courtList;
 	}
 
-	public ArrayList<Player> getCurrentPlayers(){
-		ArrayList<Player> currentPlayers = new ArrayList<>();
+	public List<Player> getCurrentPlayers(){
+		List<Player> currentPlayers = new ArrayList<>();
 
 		for (Player player : repo.getMasterList()){
 			if(!player.getInCourt() && !player.getInPrison() && !player.isAlive()){
@@ -57,8 +90,8 @@ public class ListService {
 		return currentPlayers;
 	}
 
-	public ArrayList<Player> getDeadPlayers(){
-		ArrayList<Player> deadPlayers = new ArrayList<>();
+	public List<Player> getDeadPlayers(){
+		List<Player> deadPlayers = new ArrayList<>();
 
 		for (Player player : repo.getMasterList()){
 			if(!player.isAlive()){

@@ -21,17 +21,35 @@ public class InputValidation {
 	}
 
 
-	public boolean checkInteger(String input){
-		try {
-			Integer.parseInt(input);
-			return true;
-		} catch (NumberFormatException e) {
-			return false;
-		}
-	}
-
 	public boolean checkInterval(Integer first, Integer last, Integer input){
 		return (input <= last && input >= first);
+	}
+
+	public Integer parseInteger(String input){
+		return Integer.parseInt(input);
+	}
+
+	public boolean quitCondition(String input){
+		return input.equalsIgnoreCase("q");
+	}
+
+	public Integer validInput(Player player, Integer first, Integer last){
+		while(true){
+			String input = userInput.getInput();
+			if(quitCondition(input)){
+				return -1;
+			}
+			try {
+				Integer integerInput = parseInteger(input);
+				if(checkInterval(first, last, integerInput)){  //checkInterval metodu, sayının istenen aralıkta olup olmamasını kontrol ediyor
+					return integerInput;
+				}else{
+					consolePrinter.errorOutput(ErrorMessages.invalidIntervalError);
+				}
+			} catch (NumberFormatException e) {
+				consolePrinter.errorOutput(ErrorMessages.nonNumberInputError); //try-catch, sayı olup olmamasını kontrol ediyor
+			}
+		}
 	}
 	
 }

@@ -4,6 +4,7 @@ public abstract class Character {
 
 	private final Integer startingBudget = 20;
 	private final Integer bribePrice = 20;
+	private final Integer startingHonour = 2;
 	
 	private boolean isJudge;
 	private boolean isBribable;
@@ -19,6 +20,10 @@ public abstract class Character {
 
 	public Integer getBribePrice() {
 		return bribePrice;
+	}
+
+	public Integer getStartingHonour(){
+		return this.startingHonour;
 	}
 
 	public boolean getIsBribable() {

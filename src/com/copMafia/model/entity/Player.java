@@ -1,13 +1,10 @@
 package com.copMafia.model.entity;
 
-import com.copMafia.model.entity.roles.Role;
 import com.copMafia.model.entity.characters.Character;
 
 public class Player {
 
 	private String name;
-
-	private Role role;
 
 	private Character character;
 
@@ -23,9 +20,10 @@ public class Player {
 
 	private boolean inPrison;
 
-	public Player(String name, Role role, Character character){
+	private Integer honourLevel;
+
+	public Player(String name, Character character){
 		this.name = name;
-		this.role = role;
 		this.character = character;
 		this.budget = character.getStartingBudget();
 		this.savedLastRound = false;
@@ -33,14 +31,11 @@ public class Player {
 		this.isAlive = true;
 		this.inCourt = false;
 		this.inPrison = false;
+		this.honourLevel = character.getStartingHonour();
 	}
 
 	public String getName() {
     return name;
-	}
-
-	public Role getRole() {
-		return role;
 	}
 
 	public Character getCharacter() {
@@ -93,6 +88,14 @@ public class Player {
 
 	public void setInPrison(boolean inPrison){
 		this.inPrison = inPrison;
+	}
+
+	public Integer getHonourLevel(){
+		return this.honourLevel;
+	}
+
+	public void setHonourLevel(Integer honourLevel){
+		this.honourLevel = honourLevel;
 	}
 	
 }

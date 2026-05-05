@@ -1,29 +1,30 @@
 package com.copMafia.model.service.actions;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.copMafia.model.entity.Player;
 import com.copMafia.model.entity.actions.Action;
-import com.copMafia.model.entity.actions.KillAction;
-import com.copMafia.model.entity.actions.mafiaActions.Bribe;
+import com.copMafia.model.entity.actions.copActions.Custody;
+import com.copMafia.model.entity.actions.copActions.Interrogation;
+import com.copMafia.model.entity.actions.judgeActions.Arrest;
 import com.copMafia.model.factory.ActionFactory;
 import com.copMafia.model.service.ListService;
 import com.copMafia.util.InputValidation;
 import com.copMafia.util.messages.CommonMessages;
+import com.copMafia.util.messages.CopMessages;
 import com.copMafia.util.messages.MafiaMessages;
 import com.copMafia.view.ConsolePrinter;
 import com.copMafia.view.UserInput;
 
-public class MafiaActions implements NightAction{
-
+public class CopActions implements NightAction{
+	
 	private final UserInput userInput;
 	private final ConsolePrinter consolePrinter;
 	private final InputValidation inputValidation;
 	private final ListService listService;
 	private final ActionFactory actionFactory;
 
-	public MafiaActions(UserInput userInput, ConsolePrinter consolePrinter, InputValidation inputValidation, ListService listService, ActionFactory actionFactory){
+	public CopActions(UserInput userInput, ConsolePrinter consolePrinter, InputValidation inputValidation, ListService listService, ActionFactory actionFactory){
 		this.userInput = userInput;
 		this.consolePrinter = consolePrinter;
 		this.inputValidation = inputValidation;
@@ -31,9 +32,8 @@ public class MafiaActions implements NightAction{
 		this.actionFactory = actionFactory;
 	}
 
-
-	public KillAction kill(Player mafia){
-		consolePrinter.output(MafiaMessages.killMessage);
+	public Custody custody(Player cop){
+		consolePrinter.output(CopMessages.custodyMessage);
 		consolePrinter.printOpponents(mafia);
 		consolePrinter.output(CommonMessages.choosePlayerMessage);
 		Integer input = inputValidation.validInput(mafia, 1, listService.getCurrentNonJudgeOpponents(mafia).size());
@@ -41,28 +41,20 @@ public class MafiaActions implements NightAction{
 		return actionFactory.createKillAction(mafia, victim);
 	}
 
-	public Bribe bribe(Player mafia){
-		consolePrinter.output(MafiaMessages.bribeDecisionMessage);
-		consolePrinter.printOpponents(mafia);
-		consolePrinter.output(CommonMessages.choosePlayerMessage);
-		Integer input = inputValidation.validInput(mafia, 1, listService.getCurrentNonJudgeOpponents(mafia).size());
-		Player opponent = listService.getChosenOpponent(mafia, input);
-		return actionFactory.createBribe(mafia, opponent);
+	public Interrogation interrogate(Player cop){
+
 	}
+
+
+
+
+
 
 
 	@Override
-	public List<Action> executeNightAction(Player mafia) {
-		List<Action> actionList = new ArrayList<>();
-		KillAction mafiaKill = kill(mafia);
-		actionList.add(mafiaKill);
-		if(userInput.yesOrNo(mafia)){
-			Bribe mafiaBribe = bribe(mafia);
-			actionList.add(mafiaBribe);
-		}
-		return actionList;
+	public List<Action> executeNightAction(Player player) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'executeNightAction'");
 	}
 
-	
-	
 }

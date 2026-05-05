@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.copMafia.model.entity.Player;
 import com.copMafia.util.InputValidation;
-import com.copMafia.util.messages.Messages;
+import com.copMafia.util.messages.CommonMessages;
 import com.copMafia.view.ConsolePrinter;
 
 public class GameLogicService {
@@ -18,5 +18,7 @@ public class GameLogicService {
 		this.listService = listService;
 		this.consolePrinter = consolePrinter;
 	}
+
+	
 
 }

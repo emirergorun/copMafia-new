@@ -15,7 +15,7 @@ suçsuz olmalarına karar verip onları hapse atmak veya serbest bırakmaktır. 
 tek başına kendisi ve tüm sorumluluk kendine aittir.
 
 VATANDAŞ (CITIZEN):
-Oyunda bir yeteneği bulunmayan, mafyaların kim olduğunu anlayıp oylamayla hapse attırmaya çalışan karakterlerdir.
+Oyunda özel bir yeteneği bulunmayan, mafyaların kim olduğunu anlayıp oylamayla hapse attırmaya çalışan karakterlerdir.
 
 --------------- ZORUNLU OLMAYAN KARAKTERLER ---------------
 

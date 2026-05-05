@@ -1,6 +1,7 @@
 package com.copMafia.view;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.copMafia.model.entity.Player;
 import com.copMafia.model.service.ListService;
@@ -14,7 +15,7 @@ public class ConsolePrinter {
 	}
 	
 	public void printOpponents(Player player){
-		ArrayList<Player> opponentList = listService.getOpponents(player);
+		List<Player> opponentList = listService.getCurrentNonJudgeOpponents(player);
 		int i = 1;
 		for (Player opponent : opponentList) {
 			System.out.println(i + "- " + opponent.getName());
