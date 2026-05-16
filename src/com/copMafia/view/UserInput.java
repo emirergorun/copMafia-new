@@ -19,7 +19,7 @@ public class UserInput {
 	}
 
 	public boolean yesOrNo(Player player){
-		return inputValidation.validInput(player, 1, 2) == 1;
+		return inputValidation.validPlayerListInput(player, 1, 2) == 1;
 	}
 
 }

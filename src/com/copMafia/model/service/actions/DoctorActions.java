@@ -6,6 +6,8 @@ import java.util.List;
 import com.copMafia.model.entity.Player;
 import com.copMafia.model.entity.actions.Action;
 import com.copMafia.model.entity.actions.doctorActions.SaveVictim;
+import com.copMafia.model.exceptions.NullActionException;
+import com.copMafia.model.exceptions.WrongNightExecuteException;
 import com.copMafia.model.factory.ActionFactory;
 import com.copMafia.model.service.ListService;
 import com.copMafia.util.InputValidation;
@@ -27,22 +29,33 @@ public class DoctorActions implements NightAction{
 		this.actionFactory = actionFactory;
 	}
 	
-	public SaveVictim saveVictim(Player doctor){
-		consolePrinter.output(DoctorMessages.saveMessage);
-		consolePrinter.output(DoctorMessages.saveWarningMessage);
-		consolePrinter.printOpponents(doctor);
-		consolePrinter.output(CommonMessages.choosePlayerMessage);
-		Integer input = inputValidation.validInput(doctor, 1, listService.getDoctorChoicePlayers(doctor).size());
-		Player victim = listService.getSaveLifeVictim(doctor, input);
+	public SaveVictim saveVictim(Player doctor, Player victim){
 		return actionFactory.createSaveVictim(doctor, victim);
+	}
+	
+	@Override
+	public Action executeNightAction(Player doctor, Action action, Player oppponent) {
+		try {
+			if(action instanceof SaveVictim)
+				return saveVictim(doctor, oppponent);
+			else
+				throw new NullActionException(doctor.getCharacter().getClass().getSimpleName());
+		} catch (NullActionException e) {
+			System.out.println(e.getLocation() + " - " + e.getMessage());
+		}
+		return null; // buraya hiç gelmemesi gerekiyor
 	}
 
 	@Override
-	public List<Action> executeNightAction(Player player) {
-		List<Action> actionList = new ArrayList<>();
-		SaveVictim saveVictim = saveVictim(player);
-		actionList.add(saveVictim);
-		return actionList;
+	public Action executeNightAction(Player player, Action action) {
+		try {
+			throw new WrongNightExecuteException(player.getCharacter().getClass().getSimpleName());
+		} catch (WrongNightExecuteException e) {
+			System.out.println(e.getLocation() + " - " + e.getMessage());
+		}
+		// BU FONKSİYONUN HİÇ ÇALIŞMAMASI GEREKİYOR
+		return null;
 	}
+
 
 }

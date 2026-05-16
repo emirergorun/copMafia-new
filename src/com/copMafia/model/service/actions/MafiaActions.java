@@ -3,10 +3,14 @@ package com.copMafia.model.service.actions;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.copMafia.controller.GameController;
 import com.copMafia.model.entity.Player;
 import com.copMafia.model.entity.actions.Action;
 import com.copMafia.model.entity.actions.KillAction;
 import com.copMafia.model.entity.actions.mafiaActions.Bribe;
+import com.copMafia.model.entity.characters.Mafia;
+import com.copMafia.model.exceptions.NullActionException;
+import com.copMafia.model.exceptions.WrongNightExecuteException;
 import com.copMafia.model.factory.ActionFactory;
 import com.copMafia.model.service.ListService;
 import com.copMafia.util.InputValidation;
@@ -19,50 +23,53 @@ public class MafiaActions implements NightAction{
 
 	private final UserInput userInput;
 	private final ConsolePrinter consolePrinter;
-	private final InputValidation inputValidation;
+	private final GameController gameController;
 	private final ListService listService;
 	private final ActionFactory actionFactory;
+	
 
-	public MafiaActions(UserInput userInput, ConsolePrinter consolePrinter, InputValidation inputValidation, ListService listService, ActionFactory actionFactory){
+	public MafiaActions(UserInput userInput, ConsolePrinter consolePrinter, GameController gameController, ListService listService, ActionFactory actionFactory){
 		this.userInput = userInput;
 		this.consolePrinter = consolePrinter;
-		this.inputValidation = inputValidation;
+		this.gameController = gameController;
 		this.listService = listService;
 		this.actionFactory = actionFactory;
 	}
 
-
-	public KillAction kill(Player mafia){
-		consolePrinter.output(MafiaMessages.killMessage);
-		consolePrinter.printOpponents(mafia);
-		consolePrinter.output(CommonMessages.choosePlayerMessage);
-		Integer input = inputValidation.validInput(mafia, 1, listService.getCurrentNonJudgeOpponents(mafia).size());
-		Player victim = listService.getChosenOpponent(mafia, input);
-		return actionFactory.createKillAction(mafia, victim);
+	public KillAction kill(Player mafia, Player opponent){
+		return actionFactory.createKillAction(mafia, opponent);
 	}
 
-	public Bribe bribe(Player mafia){
-		consolePrinter.output(MafiaMessages.bribeDecisionMessage);
-		consolePrinter.printOpponents(mafia);
-		consolePrinter.output(CommonMessages.choosePlayerMessage);
-		Integer input = inputValidation.validInput(mafia, 1, listService.getCurrentNonJudgeOpponents(mafia).size());
-		Player opponent = listService.getChosenOpponent(mafia, input);
-		return actionFactory.createBribe(mafia, opponent);
+	public Bribe bribe(Player mafia, Player victim){
+		consolePrinter.output(MafiaMessages.bribeOpponentMessage);
+		String message = userInput.getInput();
+		return actionFactory.createBribe(mafia, victim, message);
 	}
-
 
 	@Override
-	public List<Action> executeNightAction(Player mafia) {
-		List<Action> actionList = new ArrayList<>();
-		KillAction mafiaKill = kill(mafia);
-		actionList.add(mafiaKill);
-		if(userInput.yesOrNo(mafia)){
-			Bribe mafiaBribe = bribe(mafia);
-			actionList.add(mafiaBribe);
+	public Action executeNightAction(Player mafia, Action action, Player victim) {
+		try {
+			if(action instanceof KillAction)
+				return kill(mafia, victim);
+			else if(action instanceof Bribe)
+				return bribe(mafia, victim);
+			else
+				throw new NullActionException(mafia.getCharacter().getClass().getSimpleName());
+		} catch (NullActionException e) {
+			System.out.println(e.getLocation() + " - " + e.getMessage());
 		}
-		return actionList;
+		return null; // buraya hiç gelmemesi gerekiyor
 	}
 
-	
+	@Override
+	public Action executeNightAction(Player player, Action action) {
+		try {
+			throw new WrongNightExecuteException(player.getCharacter().getClass().getSimpleName());
+		} catch (WrongNightExecuteException e) {
+			System.out.println(e.getLocation() + " - " + e.getMessage());
+		}
+		// BU FONKSİYONUN HİÇ ÇALIŞMAMASI GEREKİYOR
+		return null;
+	}
 	
 }

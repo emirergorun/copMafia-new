@@ -1,25 +1,24 @@
 package com.copMafia.model.entity.actions.copActions;
 
 import com.copMafia.model.entity.Player;
-import com.copMafia.model.entity.actions.Action;
+import com.copMafia.model.entity.actions.IntegratedAction;
 import com.copMafia.util.enums.CustodyResult;
 import com.copMafia.util.enums.CustodyStatus;
 
-public class Custody extends Action{
-
-	private Player criminal;
+public class Custody extends IntegratedAction{
 
 	private CustodyResult result;
 
 	private CustodyStatus status;
 
-	public Custody(Player player, Player criminal, Integer nightCount) {
-		super(player, nightCount);
-		this.criminal = criminal;
-	}
+	private final Integer actionPrice = 0;
 
-	public Player getCriminal(){
-		return this.criminal;
+	private final Integer actionPrize = 10;
+
+	public Custody(Player cop, Player criminal, Integer nightCount) {
+		super(cop, criminal, nightCount);
+		this.setActionPrice(actionPrice);
+		this.setActionPrize(actionPrize);
 	}
 
 	public CustodyResult getCustodyResult(){

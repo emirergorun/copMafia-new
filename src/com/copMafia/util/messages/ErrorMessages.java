@@ -6,4 +6,6 @@ public class ErrorMessages {
 
 	public static final String nonNumberInputError = "Lütfen bir sayı girin.";
 
+	public static final String insufficientBalanceError = "Bakiyen bu işlemi yapmak için yeterli değil.";
+
 }

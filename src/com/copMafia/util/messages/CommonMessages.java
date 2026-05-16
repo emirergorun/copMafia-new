@@ -19,5 +19,5 @@ public class CommonMessages {
 	public static final String pressQExitMessage = "Çıkış yapmak için q'ya bas.";
 
 	public static final String yesOrNoMessage = "Evet için 1'e, Hayır için 2'ye bas.";
-
+	
 }

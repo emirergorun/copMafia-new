@@ -1,14 +1,19 @@
 package com.copMafia.model.entity.characters;
 
+import java.util.List;
+
+import com.copMafia.model.entity.actions.Action;
+
 public abstract class Character {
 
 	private final Integer startingBudget = 20;
 	private final Integer bribePrice = 20;
 	private final Integer startingHonour = 2;
-	
+
 	private boolean isJudge;
 	private boolean isBribable;
 	private boolean isEvil;
+	private List<Action> possibleActions;
 
 	public Character() {
 		
@@ -48,6 +53,14 @@ public abstract class Character {
 
 	public void setIsJudge(boolean isJudge){
 		this.isJudge = isJudge;
+	}
+
+	public List<Action> getPossibleActions(){
+		return this.possibleActions;
+	}
+
+	public void setPossibleActions(List<Action> possibleActions){
+		this.possibleActions = possibleActions;
 	}
 
 }

@@ -1,19 +1,47 @@
 package com.copMafia.model.entity.actions.mafiaActions;
 
+import java.util.List;
+
 import com.copMafia.model.entity.Player;
-import com.copMafia.model.entity.actions.Action;
+import com.copMafia.model.entity.actions.IntegratedAction;
+import com.copMafia.model.service.ListService;
 
-public class Bribe extends Action{
+public class Bribe extends IntegratedAction {
+
+	private final String bribeDecisionMessage = "Bu gece birisine rüşvet vermek istiyor musun?";
+	private final String bribeActionMessage = "Lütfen kime rüşvet vermek istediğini seç.";
+	private final String bribeNegativeDecisionMessage = "Bu gece kimseye rüşvet vermemeye karar verdin.";
 	
-	private Player victim;
+	private String bribeOpponentMessage;
 
-	public Bribe(Player mafia, Player victim, Integer nightNumber){
-		super(mafia, nightNumber);
-		this.victim = victim;
+	private final Integer actionPrice = 20;
+
+	private final Integer actionPrize = 0;
+	
+	
+	public Bribe(Player mafia, Player victim, String message, Integer nightNumber){
+		super(mafia, victim, nightNumber);
+		this.setActionMessage(bribeActionMessage);
+		this.setDecidable(true);
+		this.setActionMessage(bribeActionMessage);
+		this.setDecisionMessage(bribeDecisionMessage); 
+		this.setNegativeDecisionMessage(bribeNegativeDecisionMessage);
 	}
 
-	public Player getVictim(){
-		return this.victim;
+	public Bribe(){
+		
+	}
+
+	public String getBribeMessage(){
+		return this.bribeOpponentMessage;
+	}
+
+	public void setBribeOppponentMessage(String message){
+		this.bribeOpponentMessage = message;
+	}
+
+	public List<Player> getActionOpponents(Player player, ListService listService){
+		return listService.getCurrentNonJudgeOpponents(player);
 	}
 
 }

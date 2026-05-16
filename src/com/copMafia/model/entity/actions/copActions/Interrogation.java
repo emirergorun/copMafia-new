@@ -1,22 +1,21 @@
 package com.copMafia.model.entity.actions.copActions;
 
 import com.copMafia.model.entity.Player;
-import com.copMafia.model.entity.actions.Action;
+import com.copMafia.model.entity.actions.IntegratedAction;
 import com.copMafia.util.enums.InterrogationResult;
 
-public class Interrogation extends Action{
-
-	private Player criminal;
+public class Interrogation extends IntegratedAction{
 
 	private InterrogationResult result;
-	
-	public Interrogation(Player player, Player criminal, Integer nightCount) {
-		super(player, nightCount);
-		this.criminal = criminal;
-	}
 
-	public Player getCriminal(){
-		return this.criminal;
+	private final Integer actionPrice = 10;
+
+	private final Integer actionPrize = 0;
+	
+	public Interrogation(Player cop, Player suspect, Integer nightCount) {
+		super(cop, suspect, nightCount);
+		this.setActionPrice(actionPrice);
+		this.setActionPrize(actionPrize);
 	}
 
 	public InterrogationResult getResult(){

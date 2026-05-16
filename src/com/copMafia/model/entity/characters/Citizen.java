@@ -6,5 +6,6 @@ public class Citizen extends Character{
 		setIsBribable(true);
 		setIsEvil(false);
 		setIsJudge(false);
+		setPossibleActions(null);
 	}
 }

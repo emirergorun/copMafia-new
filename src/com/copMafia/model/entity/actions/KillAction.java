@@ -1,24 +1,34 @@
 package com.copMafia.model.entity.actions;
 
+import java.util.List;
+
 import com.copMafia.model.entity.Player;
+import com.copMafia.model.service.ListService;
 import com.copMafia.util.enums.KillStatus;
 import com.copMafia.util.enums.KillerRole;
 
-public class KillAction extends Action{
+public class KillAction extends IntegratedAction{
 	
-	private Player victim;
-
 	private KillStatus status;
 
 	private KillerRole killerRole;
 
+	private final String killActionMessage = "Bu gece birini öldüreceksin.";
+
+	private final Integer actionPrice = 0;
+
+	private final Integer actionPrize = 10;
+
 	public KillAction(Player killer, Player victim, Integer nightNumber){
-		super(killer, nightNumber);
-		this.victim = victim;
+		super(killer, victim, nightNumber);
+		this.setActionMessage(killActionMessage);
+		this.setDecidable(false);
+		this.setActionPrice(actionPrice);
+		this.setActionPrize(actionPrize);
 	}
 
-	public Player getVictim(){
-		return this.victim;
+	public KillAction(){
+		
 	}
 
 	public KillStatus getStatus(){
@@ -35,6 +45,10 @@ public class KillAction extends Action{
 
 	public void setKillerRole(KillerRole killerRole){
 		this.killerRole = killerRole;
+	}
+
+	public List<Player> getActionOpponents(Player player, ListService listService){
+		return listService.getCurrentNonJudgeOpponents(player);
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.copMafia.engine;
 
+import com.copMafia.model.entity.actions.Action;
+
 public class GameEngine {
 
 	private Integer nightCount;
@@ -26,7 +28,5 @@ public class GameEngine {
 	public void setMorningCount(Integer morningCount){
 		this.morningCount = morningCount;
 	}
-
-
 	
 }

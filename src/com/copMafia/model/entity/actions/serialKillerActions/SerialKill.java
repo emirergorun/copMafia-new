@@ -6,9 +6,15 @@ import com.copMafia.util.enums.KillerRole;
 
 public class SerialKill extends KillAction {
 
+	private final Integer actionPrice = 0;
+
 	public SerialKill(Player serialKiller, Player victim, Integer nightCount){
 		super(serialKiller, victim, nightCount);
 		this.setKillerRole(KillerRole.SERIAL_KILLER);
+	}
+
+	public SerialKill(){
+		
 	}
 	
 }

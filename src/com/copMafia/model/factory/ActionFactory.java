@@ -4,6 +4,7 @@ import com.copMafia.engine.GameEngine;
 import com.copMafia.model.entity.Player;
 import com.copMafia.model.entity.actions.Action;
 import com.copMafia.model.entity.actions.KillAction;
+import com.copMafia.model.entity.actions.copActions.Custody;
 import com.copMafia.model.entity.actions.copActions.Interrogation;
 import com.copMafia.model.entity.actions.doctorActions.SaveVictim;
 import com.copMafia.model.entity.actions.mafiaActions.Bribe;
@@ -21,28 +22,29 @@ public class ActionFactory {
 	}
 
 	public KillAction createKillAction(Player killer, Player victim){
-		Integer nightCount = 1;
 		if(killer.getCharacter() instanceof Mafia){
-			return new MafiaKill(killer, victim, nightCount);
+			return new MafiaKill(killer, victim, gameEngine.getNightCount());
 		}else{
-			return new SerialKill(killer, victim, nightCount);
+			return new SerialKill(killer, victim, gameEngine.getNightCount());
 		}
 	}
 
-	public Bribe createBribe(Player mafia, Player opponent){
-		Bribe bribe = new Bribe(mafia, opponent, gameEngine.getNightCount());
-		return bribe;
+	public Bribe createBribe(Player mafia, Player opponent, String message){
+		return new Bribe(mafia, opponent, message, gameEngine.getNightCount());
 	}
 
 	public SaveVictim createSaveVictim(Player doctor, Player victim){
-		SaveVictim saveVictim = new SaveVictim(doctor, victim, gameEngine.getNightCount());
-		return saveVictim;
+		return new SaveVictim(doctor, victim, gameEngine.getNightCount());
+	}
+
+	public Custody createCustody(Player cop, Player suspect){
+		return new Custody(cop, suspect, gameEngine.getNightCount());
 	}
 
 	public Interrogation createInterrogation(Player cop, Player criminal){
 		Interrogation interrogation = new Interrogation(cop, criminal, gameEngine.getNightCount());
 		if(criminal.getCharacter().getIsEvil()){
-			interrogation.setResult(InterrogationResult.BAD);
+			interrogation.setResult(InterrogationResult.EVIL);
 		}else{
 			interrogation.setResult(InterrogationResult.GOOD);
 		}

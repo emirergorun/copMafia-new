@@ -10,5 +10,9 @@ public class MafiaKill extends KillAction{
 		super(mafia, victim, nightNumber);
 		this.setKillerRole(KillerRole.MAFIA);
 	}
+
+	public MafiaKill(){
+		
+	}
 	
 }

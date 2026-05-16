@@ -23,7 +23,7 @@ public class ConsolePrinter {
 		}
 	}
 
-	public void printList(ArrayList<Player> list){
+	public void printList(List<Player> list){
 		int i = 1;
 		for (Player player : list) {
 			System.out.println(i + "- " + player.getName());
@@ -37,6 +37,10 @@ public class ConsolePrinter {
 
 	public void errorOutput(String error){
 		System.out.println(error);
+	}
+
+	public void exceptionOutput(String exceptionMessage){
+		System.out.println(exceptionMessage);
 	}
 
 }

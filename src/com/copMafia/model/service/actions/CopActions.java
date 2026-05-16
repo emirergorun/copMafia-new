@@ -7,6 +7,9 @@ import com.copMafia.model.entity.actions.Action;
 import com.copMafia.model.entity.actions.copActions.Custody;
 import com.copMafia.model.entity.actions.copActions.Interrogation;
 import com.copMafia.model.entity.actions.judgeActions.Arrest;
+import com.copMafia.model.entity.characters.Cop;
+import com.copMafia.model.exceptions.NullActionException;
+import com.copMafia.model.exceptions.WrongNightExecuteException;
 import com.copMafia.model.factory.ActionFactory;
 import com.copMafia.model.service.ListService;
 import com.copMafia.util.InputValidation;
@@ -32,29 +35,38 @@ public class CopActions implements NightAction{
 		this.actionFactory = actionFactory;
 	}
 
-	public Custody custody(Player cop){
-		consolePrinter.output(CopMessages.custodyMessage);
-		consolePrinter.printOpponents(mafia);
-		consolePrinter.output(CommonMessages.choosePlayerMessage);
-		Integer input = inputValidation.validInput(mafia, 1, listService.getCurrentNonJudgeOpponents(mafia).size());
-		Player victim = listService.getChosenOpponent(mafia, input);
-		return actionFactory.createKillAction(mafia, victim);
+	public Custody custody(Player cop, Player suspect){
+		return actionFactory.createCustody(cop, suspect);
 	}
 
-	public Interrogation interrogate(Player cop){
-
+	public Interrogation interrogate(Player cop, Player suspect){
+		return actionFactory.createInterrogation(cop, suspect);
 	}
-
-
-
-
-
-
 
 	@Override
-	public List<Action> executeNightAction(Player player) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'executeNightAction'");
+	public Action executeNightAction(Player cop, Action action, Player oppponent) {
+		try {
+			if(action instanceof Custody)
+				return custody(cop, oppponent);
+			else if(action instanceof Interrogation)
+				return interrogate(cop, oppponent);
+			else
+				throw new NullActionException(cop.getCharacter().getClass().getSimpleName());
+		} catch (NullActionException e) {
+			System.out.println(e.getLocation() + " - " + e.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public Action executeNightAction(Player player, Action action) {
+		try {
+			throw new WrongNightExecuteException(player.getCharacter().getClass().getSimpleName());
+		} catch (WrongNightExecuteException e) {
+			System.out.println(e.getLocation() + " - " + e.getMessage());
+		}
+		// BU FONKSİYONUN HİÇ ÇALIŞMAMASI GEREKİYOR
+		return null;
 	}
 
 }

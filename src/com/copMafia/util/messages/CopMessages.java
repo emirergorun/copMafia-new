@@ -11,5 +11,9 @@ public class CopMessages {
 	public static final String correctGuessMessage = "Doğru cevap! Bu gece birisini tutuklayabilirsin.";
 
 	public static final String decisionMessage = "Bu gece birisini sorgulamak mı tutuklamak mı istiyorsun?";
+
+	public static final String decisionMessage2 = "Aynı anda tutuklama ve sorgulama yapamazsın. Birisini seçmelisin.";
+
+	public static final String decisionMessage3 = "1- Tutuklama, 2- Sorgulama, q- İkisini de yapma";
 	
 }
