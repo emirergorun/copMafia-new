@@ -5,4 +5,6 @@ public class ExceptionMessages {
 	public static final String NullActionException = "Kodun buraya gelmemesi gerekiyordu. NightAction'da if döngülerine girilmedi.";
 
 	public static final String WrongNightActionFunction = "Yanlış executeNightAction fonskiyonu çalıştı.";
+
+	public static final String InsufficientBalanceException = "Bakiye yetersiz.";
 }

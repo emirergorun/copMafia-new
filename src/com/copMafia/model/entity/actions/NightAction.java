@@ -1,8 +1,12 @@
 package com.copMafia.model.entity.actions;
 
-import com.copMafia.model.entity.Player;
+import java.util.List;
 
-public abstract class Action implements ActionInterface{
+import com.copMafia.model.entity.Player;
+import com.copMafia.model.factory.ActionFactory;
+import com.copMafia.model.service.ListService;
+
+public abstract class NightAction{
 
 	private Player player;
 
@@ -20,13 +24,14 @@ public abstract class Action implements ActionInterface{
 
 	private Integer actionPrize;
 
-	public Action(Player player, Integer nightCount){
+	private Integer actionHonour;
+
+	public NightAction(Player player, Integer nightCount){
 		this.player = player;
 		this.nightCount = nightCount;
 	}
 
-	public Action(){
-
+	public NightAction(){
 	}
 
 	public Player getPlayer(){
@@ -96,6 +101,16 @@ public abstract class Action implements ActionInterface{
 		this.actionPrize = actionPrize;
 	}
 
-	
+	public Integer getActionHonour(){
+		return this.actionHonour;
+	}
+
+	public void setActionHonour(Integer actionHonour){
+		this.actionHonour = actionHonour;
+	}
+
+	public abstract NightAction execute(Player player, Player opponent, ActionFactory actionFactory);
+
+	public abstract List<Player> getActionOpponents(Player player, ListService listService);
 	
 }

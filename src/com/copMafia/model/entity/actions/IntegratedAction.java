@@ -5,7 +5,7 @@ import java.util.List;
 import com.copMafia.model.entity.Player;
 import com.copMafia.model.service.ListService;
 
-public class IntegratedAction extends Action{
+public abstract class IntegratedAction extends NightAction{
 
 	private Player opponent;
 
@@ -20,12 +20,6 @@ public class IntegratedAction extends Action{
 
 	public Player getOpponent(){
 		return this.opponent;
-	}
-
-	@Override
-	public List<Player> getActionOpponents(Player player, ListService listService) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getActionOpponents'");
 	}
 	
 }

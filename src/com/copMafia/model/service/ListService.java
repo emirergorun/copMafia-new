@@ -1,10 +1,12 @@
 package com.copMafia.model.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.copMafia.model.entity.Player;
-import com.copMafia.model.entity.actions.Action;
+import com.copMafia.model.entity.actions.NightAction;
+import com.copMafia.model.entity.characters.Mafia;
 import com.copMafia.model.repository.ActionRepository;
 import com.copMafia.model.repository.PlayerRepository;
 
@@ -98,9 +100,9 @@ public class ListService {
 		return deadPlayers;
 	}
 
-	public List<Action> getActionList(Player person){
-		List<Action> actionList = new ArrayList<>();
-		for (Action action : actionRepo.getMasterActionList()) {
+	public List<NightAction> getActionList(Player person){
+		List<NightAction> actionList = new ArrayList<>();
+		for (NightAction action : actionRepo.getMasterActionList()) {
 			if(action.getPlayer().getCharacter().equals(person.getCharacter()))
 				actionList.add(action);
 		}
@@ -137,6 +139,33 @@ public class ListService {
 
 	public List<Player> copInterrogationList(Player cop){
 		return getCurrentNonJudgeOpponents(cop);
+	}
+
+	public List<Player> getMafiaPlayers(){
+		List<Player> mafiaList = new ArrayList<>();
+		for (Player player : getCurrentNonJudgePlayers()){
+			if(player.getCharacter() instanceof Mafia){
+				mafiaList.add(player);
+			}
+		}
+		Collections.shuffle(mafiaList); // mafya listesini karıştırıp döndürüyoruz.
+		return mafiaList;
+	}
+
+	public List<Player> informantList(Player informant){
+		List<Player> informantList = new ArrayList<>();
+		Player definiteMafia = getMafiaPlayers().get(0);
+		informantList.add(definiteMafia);
+		List<Player> tempList = getCurrentNonJudgeOpponents(informant);
+		Collections.shuffle(tempList);
+		int count = 0;
+		while(count < 2){
+			if(tempList.get(count) != definiteMafia){
+				informantList.add(tempList.get(count));
+				count++;
+			}
+		}
+		return informantList;
 	}
 
 

@@ -2,7 +2,7 @@ package com.copMafia.model.entity.characters;
 
 import java.util.List;
 
-import com.copMafia.model.entity.actions.Action;
+import com.copMafia.model.entity.actions.NightAction;
 
 public abstract class Character {
 
@@ -13,7 +13,8 @@ public abstract class Character {
 	private boolean isJudge;
 	private boolean isBribable;
 	private boolean isEvil;
-	private List<Action> possibleActions;
+	private List<NightAction> possibleActions;
+	private Integer availableActionCount;
 
 	public Character() {
 		
@@ -55,12 +56,20 @@ public abstract class Character {
 		this.isJudge = isJudge;
 	}
 
-	public List<Action> getPossibleActions(){
+	public List<NightAction> getPossibleActions(){
 		return this.possibleActions;
 	}
 
-	public void setPossibleActions(List<Action> possibleActions){
+	public void setPossibleActions(List<NightAction> possibleActions){
 		this.possibleActions = possibleActions;
+	}
+
+	public Integer getAvailableActionCount(){
+		return this.availableActionCount;
+	}
+
+	public void setAvailableActionCount(Integer count){
+		this.availableActionCount = count;
 	}
 
 }

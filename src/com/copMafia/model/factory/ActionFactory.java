@@ -2,11 +2,12 @@ package com.copMafia.model.factory;
 
 import com.copMafia.engine.GameEngine;
 import com.copMafia.model.entity.Player;
-import com.copMafia.model.entity.actions.Action;
+import com.copMafia.model.entity.actions.NightAction;
 import com.copMafia.model.entity.actions.KillAction;
 import com.copMafia.model.entity.actions.copActions.Custody;
 import com.copMafia.model.entity.actions.copActions.Interrogation;
 import com.copMafia.model.entity.actions.doctorActions.SaveVictim;
+import com.copMafia.model.entity.actions.informantActions.Inform;
 import com.copMafia.model.entity.actions.mafiaActions.Bribe;
 import com.copMafia.model.entity.actions.mafiaActions.MafiaKill;
 import com.copMafia.model.entity.actions.serialKillerActions.SerialKill;
@@ -49,6 +50,10 @@ public class ActionFactory {
 			interrogation.setResult(InterrogationResult.GOOD);
 		}
 		return interrogation;
+	}
+
+	public Inform createInform(Player informant){
+		return new Inform(informant, gameEngine.getNightCount());
 	}
 	
 }

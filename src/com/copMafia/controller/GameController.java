@@ -3,7 +3,7 @@ package com.copMafia.controller;
 import java.util.List;
 
 import com.copMafia.model.entity.Player;
-import com.copMafia.model.entity.actions.Action;
+import com.copMafia.model.entity.actions.NightAction;
 import com.copMafia.model.service.ListService;
 import com.copMafia.util.InputValidation;
 import com.copMafia.util.messages.ErrorMessages;
@@ -54,7 +54,7 @@ public class GameController {
 	}
 
 	public List<Player> actionController(Player person){
-		List<Action> actionList = listService.getActionList(person);
+		List<NightAction> actionList = listService.getActionList(person);
 	}
 
 	/*public List<Acti getActionList(Player person){

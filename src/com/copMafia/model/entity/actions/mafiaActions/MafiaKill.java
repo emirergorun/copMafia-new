@@ -2,6 +2,8 @@ package com.copMafia.model.entity.actions.mafiaActions;
 
 import com.copMafia.model.entity.Player;
 import com.copMafia.model.entity.actions.KillAction;
+import com.copMafia.model.entity.actions.NightAction;
+import com.copMafia.model.factory.ActionFactory;
 import com.copMafia.util.enums.KillerRole;
 
 public class MafiaKill extends KillAction{
@@ -14,5 +16,11 @@ public class MafiaKill extends KillAction{
 	public MafiaKill(){
 		
 	}
+
+	@Override
+	public NightAction execute(Player player, Player opponent, ActionFactory actionFactory) {
+		return actionFactory.createKillAction(player, opponent);
+	}
+	
 	
 }

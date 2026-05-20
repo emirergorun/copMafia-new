@@ -4,13 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.copMafia.model.entity.Player;
-import com.copMafia.model.entity.actions.Action;
+import com.copMafia.model.entity.actions.NightAction;
+import com.copMafia.model.exceptions.InsufficientBalanceException;
+import com.copMafia.model.factory.ActionFactory;
 import com.copMafia.model.entity.actions.IntegratedAction;
-import com.copMafia.model.service.actions.NightAction;
 import com.copMafia.util.GameUtils;
 import com.copMafia.util.InputValidation;
 import com.copMafia.util.messages.CommonMessages;
 import com.copMafia.util.messages.ErrorMessages;
+import com.copMafia.util.messages.ExceptionMessages;
 import com.copMafia.view.ConsolePrinter;
 import com.copMafia.view.UserInput;
 
@@ -21,16 +23,16 @@ public class GameEngineService {
 	private final InputValidation inputValidation;
 	private final GameUtils gameUtils;
 	private final ListService listService;
-	private final NightAction nightAction;
+	private final ActionFactory actionFactory;
 
 	public GameEngineService(UserInput userInput, ConsolePrinter consolePrinter, InputValidation inputValidation, 
-		GameUtils gameUtils, ListService listService, NightAction nightAction){
+		GameUtils gameUtils, ListService listService, ActionFactory actionFactory){
 		this.userInput = userInput;
 		this.consolePrinter = consolePrinter;
 		this.inputValidation = inputValidation;
 		this.gameUtils = gameUtils;
 		this.listService = listService;
-		this.nightAction = nightAction;
+		this.actionFactory = actionFactory;
 	}
 
 
@@ -50,46 +52,52 @@ public class GameEngineService {
 			}
 		}
 	}
+	
+	public boolean checkBudget(Player player, NightAction action){
+		return player.getBudget() >= action.getActionPrice();
+	}
 
 	public void playerNightAction(Player player){
-		List<Player> opponentList = new ArrayList<>();
-		for (Action action : player.getCharacter().getPossibleActions()){
-			opponentList = action.getActionOpponents(player, listService);
-			Player opponent = null;
-			consolePrinter.output(action.getActionMessage()); // bu gece birini öldüreceksin
-			if(action.getDecidable()){
-				boolean yesNoFlag = userInput.yesOrNo(player);
-				boolean budgetFlag = checkBudget(player, action);
-				if(yesNoFlag){
-					if(budgetFlag){
-						if(action instanceof IntegratedAction){
+		int executedActionCount = 0;
+		Player opponent = null;
+		boolean yesNoFlag = true;
+		NightAction nightAction = null;
+		List<Player> opponentList = new ArrayList<Player>();
+		for (NightAction action : player.getCharacter().getPossibleActions()){
+			nightAction = action;
+			opponentList = nightAction.getActionOpponents(player, listService);
+			consolePrinter.output(action.getActionMessage());
+			if(action.getDecidable())
+				yesNoFlag = userInput.yesOrNo(player);
+			if(yesNoFlag){
+				try {
+					checkActionBudget(player, nightAction);
+					if(opponentList.size() != 0){
 						consolePrinter.output(CommonMessages.choosePlayerMessage); // lütfen listeden birisini seç
 						consolePrinter.printList(opponentList);
 						opponent = opponentList.get(inputValidation.validPlayerListInput(player, 1, opponentList.size()) - 1);
-						listService.getActionRepo().getExecutedTempList().add(nightAction.executeNightAction(player, action, opponent));
 					}
-					else
-						listService.getActionRepo().getExecutedTempList().add(nightAction.executeNightAction(player, action));
-					}else{
-						consolePrinter.errorOutput(ErrorMessages.insufficientBalanceError);
-						continue;
+					nightAction.execute(player, opponent, actionFactory);
+					listService.getActionRepo().getExecutedTempList().add(nightAction);
+					executedActionCount++;
+					if(executedActionCount >= player.getCharacter().getAvailableActionCount()){
+						break;
 					}
-				}else
-					consolePrinter.output(action.getNegativeDecisionMessage());
-			}else{
-				if(action instanceof IntegratedAction){
-					consolePrinter.output(CommonMessages.choosePlayerMessage); // lütfen listeden birisini seç
-					consolePrinter.printList(opponentList);
-					listService.getActionRepo().getExecutedTempList().add(nightAction.executeNightAction(player, action, opponent));
+				} catch (InsufficientBalanceException e) {
+					consolePrinter.errorOutput(ExceptionMessages.InsufficientBalanceException);
 				}
-				else
-					listService.getActionRepo().getExecutedTempList().add(nightAction.executeNightAction(player, action));
 			}
+			else{
+				consolePrinter.output(action.getNegativeDecisionMessage());
+				continue;
+			}
+
 		}
 	}
 
-	public boolean checkBudget(Player player, Action action){
-		return player.getBudget() >= action.getActionPrice();
+	public void checkActionBudget(Player player, NightAction action){
+		if(player.getBudget() < action.getActionPrice()){
+			throw new InsufficientBalanceException();
+		}
 	}
-	
 }

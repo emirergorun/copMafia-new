@@ -7,7 +7,7 @@ import com.copMafia.model.service.ListService;
 import com.copMafia.util.enums.KillStatus;
 import com.copMafia.util.enums.KillerRole;
 
-public class KillAction extends IntegratedAction{
+public abstract class KillAction extends IntegratedAction{
 	
 	private KillStatus status;
 
@@ -19,12 +19,15 @@ public class KillAction extends IntegratedAction{
 
 	private final Integer actionPrize = 10;
 
+	private final Integer actionHonour = 1;
+
 	public KillAction(Player killer, Player victim, Integer nightNumber){
 		super(killer, victim, nightNumber);
 		this.setActionMessage(killActionMessage);
 		this.setDecidable(false);
 		this.setActionPrice(actionPrice);
 		this.setActionPrize(actionPrize);
+		this.setActionHonour(actionHonour);
 	}
 
 	public KillAction(){
@@ -47,8 +50,9 @@ public class KillAction extends IntegratedAction{
 		this.killerRole = killerRole;
 	}
 
+	@Override
 	public List<Player> getActionOpponents(Player player, ListService listService){
-		return listService.getCurrentNonJudgeOpponents(player);
+		return listService.mafiaSerialKillList(player);
 	}
 
 }

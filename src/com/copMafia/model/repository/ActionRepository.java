@@ -2,25 +2,25 @@ package com.copMafia.model.repository;
 
 import java.util.List;
 
-import com.copMafia.model.entity.actions.Action;
+import com.copMafia.model.entity.actions.NightAction;
 
 public class ActionRepository {
 	
-	private List<Action> MasterActionList;
+	private List<NightAction> MasterActionList;
 
-	private List<Action> executedActionList;
+	private List<NightAction> executedActionList;
 
-	private List<Action> executedTempList;
+	private List<NightAction> executedTempList;
 
-	public List<Action> getMasterActionList(){
+	public List<NightAction> getMasterActionList(){
 		return this.MasterActionList;
 	}
 
-	public List<Action> getExecutedActionList(){
+	public List<NightAction> getExecutedActionList(){
 		return this.executedActionList;
 	}
 
-	public List<Action> getExecutedTempList(){
+	public List<NightAction> getExecutedTempList(){
 		return this.executedTempList;
 	}
 

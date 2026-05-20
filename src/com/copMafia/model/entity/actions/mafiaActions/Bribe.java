@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.copMafia.model.entity.Player;
 import com.copMafia.model.entity.actions.IntegratedAction;
+import com.copMafia.model.entity.actions.NightAction;
+import com.copMafia.model.factory.ActionFactory;
 import com.copMafia.model.service.ListService;
 
 public class Bribe extends IntegratedAction {
@@ -17,6 +19,8 @@ public class Bribe extends IntegratedAction {
 	private final Integer actionPrice = 20;
 
 	private final Integer actionPrize = 0;
+
+	private final Integer honour = -1;
 	
 	
 	public Bribe(Player mafia, Player victim, String message, Integer nightNumber){
@@ -26,6 +30,9 @@ public class Bribe extends IntegratedAction {
 		this.setActionMessage(bribeActionMessage);
 		this.setDecisionMessage(bribeDecisionMessage); 
 		this.setNegativeDecisionMessage(bribeNegativeDecisionMessage);
+		this.setActionPrice(actionPrice);
+		this.setActionPrize(actionPrize);
+		this.setActionHonour(honour);
 	}
 
 	public Bribe(){
@@ -43,5 +50,12 @@ public class Bribe extends IntegratedAction {
 	public List<Player> getActionOpponents(Player player, ListService listService){
 		return listService.getCurrentNonJudgeOpponents(player);
 	}
+
+	@Override
+	public NightAction execute(Player player, Player opponent, ActionFactory actionFactory) {
+		return actionFactory.createBribe(player, opponent, bribeActionMessage);
+	}
+
+	
 
 }

@@ -1,6 +1,6 @@
 package com.copMafia.engine;
 
-import com.copMafia.model.entity.actions.Action;
+import com.copMafia.model.entity.actions.NightAction;
 
 public class GameEngine {
 

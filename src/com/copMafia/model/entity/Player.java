@@ -1,5 +1,6 @@
 package com.copMafia.model.entity;
 
+import com.copMafia.model.entity.actions.NightAction;
 import com.copMafia.model.entity.characters.Character;
 
 public class Player {
@@ -21,6 +22,8 @@ public class Player {
 	private boolean inPrison;
 
 	private Integer honourLevel;
+
+	private final Integer nightPrize = 10;
 
 	public Player(String name, Character character){
 		this.name = name;
@@ -96,6 +99,14 @@ public class Player {
 
 	public void setHonourLevel(Integer honourLevel){
 		this.honourLevel = honourLevel;
+	}
+
+	public boolean isBudgetSufficient(NightAction action){
+		return this.budget >= action.getActionPrice();
+	}
+
+	public Integer getNightPrize(){
+		return this.nightPrize;
 	}
 	
 }
