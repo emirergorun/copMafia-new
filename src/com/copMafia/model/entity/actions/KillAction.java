@@ -30,9 +30,7 @@ public abstract class KillAction extends IntegratedAction{
 		this.setActionHonour(actionHonour);
 	}
 
-	public KillAction(){
-		
-	}
+	public KillAction(){}
 
 	public KillStatus getStatus(){
 		return this.status;

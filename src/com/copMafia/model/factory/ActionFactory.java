@@ -8,6 +8,7 @@ import com.copMafia.model.entity.actions.copActions.Custody;
 import com.copMafia.model.entity.actions.copActions.Interrogation;
 import com.copMafia.model.entity.actions.doctorActions.SaveVictim;
 import com.copMafia.model.entity.actions.informantActions.Inform;
+import com.copMafia.model.entity.actions.lawyerActions.Bail;
 import com.copMafia.model.entity.actions.mafiaActions.Bribe;
 import com.copMafia.model.entity.actions.mafiaActions.MafiaKill;
 import com.copMafia.model.entity.actions.serialKillerActions.SerialKill;
@@ -54,6 +55,10 @@ public class ActionFactory {
 
 	public Inform createInform(Player informant){
 		return new Inform(informant, gameEngine.getNightCount());
+	}
+
+	public Bail createBail(Player lawyer, Player arrested){
+		return new Bail(lawyer, arrested, gameEngine.getNightCount());
 	}
 	
 }

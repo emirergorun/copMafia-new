@@ -16,12 +16,17 @@ public class Inform extends SoloAction{
 
 	private final Integer actionHonour = 0;
 
+
 	public Inform(Player player, Integer nightNumber){
 		super(player, nightNumber);
 		this.setActionPrice(actionPrice);
 		this.setActionPrize(actionPrize);
 		this.setActionHonour(actionHonour);
+		this.setDecidable(true);
+		this.setActionMessage(getActionMessage()); // burası ayarlanacak
 	}
+
+	public Inform(){}
 
 	@Override
 	public NightAction execute(Player player, Player opponent, ActionFactory actionFactory){
@@ -32,7 +37,5 @@ public class Inform extends SoloAction{
 	public List<Player> getActionOpponents(Player informant, ListService listService) {
 		return listService.informantList(informant);
 	}
-
-
 
 }

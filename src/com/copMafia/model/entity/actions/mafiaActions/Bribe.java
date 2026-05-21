@@ -13,6 +13,7 @@ public class Bribe extends IntegratedAction {
 	private final String bribeDecisionMessage = "Bu gece birisine rüşvet vermek istiyor musun?";
 	private final String bribeActionMessage = "Lütfen kime rüşvet vermek istediğini seç.";
 	private final String bribeNegativeDecisionMessage = "Bu gece kimseye rüşvet vermemeye karar verdin.";
+	//mesajlar ayarlanacak
 	
 	private String bribeOpponentMessage;
 
@@ -35,9 +36,7 @@ public class Bribe extends IntegratedAction {
 		this.setActionHonour(honour);
 	}
 
-	public Bribe(){
-		
-	}
+	public Bribe(){}
 
 	public String getBribeMessage(){
 		return this.bribeOpponentMessage;

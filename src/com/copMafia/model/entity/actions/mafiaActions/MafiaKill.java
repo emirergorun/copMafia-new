@@ -13,9 +13,7 @@ public class MafiaKill extends KillAction{
 		this.setKillerRole(KillerRole.MAFIA);
 	}
 
-	public MafiaKill(){
-		
-	}
+	public MafiaKill(){}
 
 	@Override
 	public NightAction execute(Player player, Player opponent, ActionFactory actionFactory) {

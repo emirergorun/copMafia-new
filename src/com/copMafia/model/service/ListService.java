@@ -168,6 +168,4 @@ public class ListService {
 		return informantList;
 	}
 
-
-
 }
