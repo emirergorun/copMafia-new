@@ -53,11 +53,11 @@ SERİ KATİL (SERIAL KILLER):
 1- ÖLDÜRMEK (-1 onur, +10 bakiye): Eğer seri katil gece birisini öldürürse bakiyesi 10 artar, onuru 1 azalır.
 
 KUMARBAZ (GAMBLER):
-1- KUMAR (+x bakiye, -10 bakiye): Kumarbaz, gece ölecek kişiyi tahmin etmeye çalışır. Bunu 10 ücret ödeyerek yapar. Eğer tahmini doğru çıkarsa 40 para kazanır. 
+1- KUMAR (+ (5* kişi sayısı) bakiye, -10 bakiye): Kumarbaz, gece ölecek kişiyi tahmin etmeye çalışır. Bunu 10 ücret ödeyerek yapar. Eğer tahmini doğru çıkarsa 40 para kazanır. 
 NOT: Kumarbaz, MAFYALARIN öldürdüğü kişiyi bilmelidir! Eğer seri katilin öldürdüğü kişiyi tahmin ederse 20 kazanır.
 
 FEDAİ (BODYGUARD):
-1- KORU (+1 onur, +2 onur, -1 onur, -2 onur): Fedai'nin gece koruduğu kişi eğer masumsa ve o kişiye bir şey olmazsa fedai +1 onur kazanır. Eğer fedai'nin koruduğu kişi masumsa 
+1- KORU (10 bakiye, +2 onur, 0 onur): Fedai'nin gece koruduğu kişi eğer masumsa ve o kişiye bir şey olmazsa fedai +1 onur kazanır. Eğer fedai'nin koruduğu kişi masumsa 
 ve o gece öldürülmeye çalışılırsa fedai masum bir insanın ölmesini engellediği için +2 onur kazanır. Eğer koruduğu kişi masum değilse onuru 1 eksilir. Eğer koruduğu kişi masum 
 değilse ve o gece öldürülmeye çalışırsa fedai masum olmayan bir insanın haayatını kurtardığı için onuru 2 eksilir. (Bu durum sadece seri katil ve mafyanın gece birbirlerini 
 öldürdüğü durumlarda gerçekleşebilir.)

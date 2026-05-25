@@ -17,8 +17,8 @@ public class Inform extends SoloAction{
 	private final Integer actionHonour = 0;
 
 
-	public Inform(Player player, Integer nightNumber){
-		super(player, nightNumber);
+	public Inform(Player player, Integer nightCount){
+		super(player, nightCount);
 		this.setActionPrice(actionPrice);
 		this.setActionPrize(actionPrize);
 		this.setActionHonour(actionHonour);

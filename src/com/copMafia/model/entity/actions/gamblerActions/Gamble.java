@@ -36,14 +36,12 @@ public class Gamble extends IntegratedAction{
 
 	@Override
 	public NightAction execute(Player player, Player opponent, ActionFactory actionFactory) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'execute'");
+		return actionFactory.createGamble(player, opponent);
 	}
 
 	@Override
-	public List<Player> getActionOpponents(Player player, ListService listService) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getActionOpponents'");
+	public List<Player> getActionOpponents(Player gambler, ListService listService) {
+		return listService.getCurrentNonJudgeOpponents(gambler);
 	}
 	
 }

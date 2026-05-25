@@ -3,18 +3,21 @@ package com.copMafia.model.factory;
 import com.copMafia.engine.GameEngine;
 import com.copMafia.model.entity.Player;
 import com.copMafia.model.entity.actions.NightAction;
+import com.copMafia.model.entity.actions.bodyguardActions.Protect;
 import com.copMafia.model.entity.actions.KillAction;
 import com.copMafia.model.entity.actions.copActions.Custody;
 import com.copMafia.model.entity.actions.copActions.Interrogation;
 import com.copMafia.model.entity.actions.doctorActions.SaveVictim;
 import com.copMafia.model.entity.actions.gamblerActions.Gamble;
 import com.copMafia.model.entity.actions.informantActions.Inform;
+import com.copMafia.model.entity.actions.journalistActions.Research;
 import com.copMafia.model.entity.actions.lawyerActions.Bail;
 import com.copMafia.model.entity.actions.mafiaActions.Bribe;
 import com.copMafia.model.entity.actions.mafiaActions.MafiaKill;
 import com.copMafia.model.entity.actions.serialKillerActions.SerialKill;
 import com.copMafia.model.entity.characters.Mafia;
 import com.copMafia.util.enums.InterrogationResult;
+import com.copMafia.util.enums.ResearchResult;
 
 public class ActionFactory {
 
@@ -64,6 +67,22 @@ public class ActionFactory {
 
 	public Gamble createGamble(Player gambler, Player opponent){
 		return new Gamble(gambler, opponent, gameEngine.getNightCount(), gameEngine.getPlayerCount());
+	}
+
+	public Protect createProtect(Player bodyguard, Player opponent){
+		return new Protect(bodyguard, opponent, gameEngine.getNightCount());
+	}
+
+	public Research createResearch(Player journalist, Player opponent){
+		Research research = new Research(journalist, opponent, gameEngine.getNightCount());
+		if(opponent.getHonourLevel() < 2)
+			research.setResearchResult(ResearchResult.LOW);
+		else if(opponent.getHonourLevel() == 2)
+			research.setResearchResult(ResearchResult.MEDIUM);
+		else
+			research.setResearchResult(ResearchResult.HIGH);
+
+		return research;
 	}
 	
 }
