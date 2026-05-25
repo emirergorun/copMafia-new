@@ -27,6 +27,9 @@ public class Custody extends IntegratedAction{
 		this.setActionPrice(actionPrice);
 		this.setActionPrize(actionPrize);
 		this.setActionHonour(honour);
+		this.setActionMessage("cop.custodyChooseMessage");
+		// mesajlar ayarlanacak
+		// actionDecisionMessage'lar karakterlere de tanımlanabilir.
 	}
 
 	public Custody(){}

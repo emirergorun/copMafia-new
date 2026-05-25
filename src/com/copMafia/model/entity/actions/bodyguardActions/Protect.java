@@ -22,6 +22,9 @@ public class Protect extends IntegratedAction{
 		this.setActionPrice(actionPrice);
 		this.setActionHonour(actionHonour);
 		this.setDecidable(false);
+		this.setDecisionMessage("bodyguard.actionDecisionMessage");
+		this.setActionMessage("bodyguard.protectChooseMessage");
+		this.setNegativeDecisionMessage("bodyguard.negativeDecisionMessage");
 	}
 
 	@Override

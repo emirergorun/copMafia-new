@@ -7,14 +7,17 @@ import com.copMafia.model.entity.actions.IntegratedAction;
 import com.copMafia.model.entity.actions.NightAction;
 import com.copMafia.model.factory.ActionFactory;
 import com.copMafia.model.service.ListService;
+import com.copMafia.util.enums.GambleType;
 
-public class Gamble extends IntegratedAction{
+public abstract class Gamble extends IntegratedAction{
 
 	//kumarbaz'ın ödülü, oyuncu sayısı'nın 5 katına eşittir.
 	private Integer multiplier; // oyuncu sayısına eşittir.
 	private final Integer actionPrize = 5;
 	private final Integer actionPrice = 10;
 	private final Integer actionHonour = 0;
+
+	private GambleType gambleType;
 
 	public Gamble(){}
 
@@ -34,9 +37,12 @@ public class Gamble extends IntegratedAction{
 		this.multiplier = multiplier;
 	}
 
-	@Override
-	public NightAction execute(Player player, Player opponent, ActionFactory actionFactory) {
-		return actionFactory.createGamble(player, opponent);
+	public GambleType getGambleType(){
+		return this.gambleType;
+	}
+
+	public void setGambleType(GambleType type){
+		this.gambleType = type;
 	}
 
 	@Override

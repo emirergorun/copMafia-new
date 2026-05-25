@@ -1,6 +1,8 @@
 package com.copMafia.model.entity.characters;
 
 import com.copMafia.model.entity.actions.gamblerActions.Gamble;
+import com.copMafia.model.entity.actions.gamblerActions.GambleArrest;
+import com.copMafia.model.entity.actions.gamblerActions.GambleDeath;
 
 public class Gambler extends Character{
 
@@ -8,7 +10,8 @@ public class Gambler extends Character{
 
 	private Boolean usedAbility;
 
-	Gamble gamble = new Gamble();
+	GambleArrest gambleArrest = new GambleArrest();
+	GambleDeath gambleDeath = new GambleDeath();
 
 	public Gambler(){
 		setIsBribable(true);
@@ -16,7 +19,8 @@ public class Gambler extends Character{
 		setIsJudge(false);
 		setAvailableActionCount(actionCount);
 		setUsedAbility(false);
-		getPossibleActions().add(gamble);
+		getPossibleActions().add(gambleArrest);
+		getPossibleActions().add(gambleDeath);
 	}
 
 	public Boolean getUsedAbility(){

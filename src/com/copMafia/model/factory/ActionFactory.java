@@ -9,6 +9,8 @@ import com.copMafia.model.entity.actions.copActions.Custody;
 import com.copMafia.model.entity.actions.copActions.Interrogation;
 import com.copMafia.model.entity.actions.doctorActions.SaveVictim;
 import com.copMafia.model.entity.actions.gamblerActions.Gamble;
+import com.copMafia.model.entity.actions.gamblerActions.GambleArrest;
+import com.copMafia.model.entity.actions.gamblerActions.GambleDeath;
 import com.copMafia.model.entity.actions.informantActions.Inform;
 import com.copMafia.model.entity.actions.journalistActions.Research;
 import com.copMafia.model.entity.actions.lawyerActions.Bail;
@@ -65,8 +67,12 @@ public class ActionFactory {
 		return new Bail(lawyer, arrested, gameEngine.getNightCount());
 	}
 
-	public Gamble createGamble(Player gambler, Player opponent){
-		return new Gamble(gambler, opponent, gameEngine.getNightCount(), gameEngine.getPlayerCount());
+	public Gamble creataGambleDeath(Player gambler, Player opponent){
+		return new GambleDeath(gambler, opponent, gameEngine.getNightCount(), gameEngine.getPlayerCount());
+	}
+
+	public Gamble creataGambleArrest(Player gambler, Player opponent){
+		return new GambleArrest(gambler, opponent, gameEngine.getNightCount(), gameEngine.getPlayerCount());
 	}
 
 	public Protect createProtect(Player bodyguard, Player opponent){
